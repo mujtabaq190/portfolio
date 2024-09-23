@@ -1,3 +1,27 @@
+const aboutBtn = document.getElementById('aboutBtn');
+    const aboutPopup = document.getElementById('aboutPopup');
+    const closePopup = document.getElementById('closePopup');
+
+    aboutBtn.addEventListener('click', () => {
+        aboutPopup.classList.remove('hidden');
+    });
+
+    closePopup.addEventListener('click', () => {
+        aboutPopup.classList.add('hidden');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === aboutPopup) {
+            aboutPopup.classList.add('hidden');
+        }
+    });
+
+    function scrollToProject() {
+      document.getElementById("Project").scrollIntoView({ behavior: "smooth" });
+    }
+
+
+
 var canvas = document.querySelector("#wrapper-canvas");
 
 var dimensions = {
@@ -211,3 +235,4 @@ function setWindowSize() {
 let m = runMatter();
 setWindowSize();
 $(window).resize(debounce(setWindowSize, 250));
+
